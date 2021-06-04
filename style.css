@@ -401,8 +401,11 @@ button.card-btn {
   article {
     margin-bottom: 80px;
     min-height: 309px;
+  }
+  article {
     padding: 0;
   }
+
   nav {
     display: flex;
     background-color: #292929;
