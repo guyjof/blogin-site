@@ -12,13 +12,12 @@
 <body>
     <div class="screen" onclick="toggleMenu()"></div>
     <header>
-
-        <nav>
+        <nav class="flex">
             <div class="logo">
                 <h1>Blogin<small>.</small></h1>
             </div>
             <div class="nav-btns">
-                <ul class="menu">
+                <ul class="menu flex">
                     <li><a href="#">Journal</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Work</a></li>
@@ -28,9 +27,19 @@
             </div>
         </nav>
     </header>
-    <main>
+    <main class="modal-open">
+        <div class="modal">
+            <h3>duis aute irure dolor in henderit in voluptate</h3>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo
+                doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                pariatur...</p>
+            <button class="modal-btn" onclick="closeModal()">close</button>
+        </div>
 
-        <article>
+        <article class="flex">
             <div class="card-img">
                 <img src="img/1.png">
             </div>
@@ -43,11 +52,11 @@
                 <p>
                     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
                     pariatur...</p>
-                <button class="card-btn">Continue Reading<span> →</span></button>
+                <button class="card-btn" onclick="toggleModal()">Continue Reading<span> →</span></button>
             </div>
         </article>
 
-        <article>
+        <article class="flex">
             <div class="card-img">
                 <img src="img/2.png" alt="">
 
@@ -61,11 +70,11 @@
                 <p>
                     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
                     pariatur...</p>
-                <button class="card-btn">Continue Reading<span> →</span></button>
+                <button class="card-btn" onclick="toggleModal()">Continue Reading<span> →</span></button>
             </div>
         </article>
 
-        <article>
+        <article class="flex">
             <div class="card-img">
                 <img src="img/3.png" alt="">
 
@@ -79,13 +88,12 @@
                 <p>
                     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
                     pariatur...</p>
-                <button class="card-btn">Continue Reading<span> →</span></button>
+                <button class="card-btn" onclick="toggleModal()">Continue Reading<span> →</span></button>
             </div>
         </article>
 
-        <div class="pages-btns">
-            <div class="back-btn page-btn">
-                <button>
+        <div class="pages-btns flex">
+            <div class="back-btn page-btn"> <button>
                     ← Previous
                 </button>
             </div>
@@ -103,19 +111,32 @@
         <h1>Blogin<small>.</small></h1>
         <span class="credits">© 2014 Blogin.com - All Rights Reserved - Find more free Templates at
             <span class="strong">Pixelhint.com</span></span>
-        <ul>
-            <li class="social-btn"><a href="https://www.facebook.com/" target="_blank"><img
+        <ul class="flex">
+            <li class="social-btn facebook"><a href="https://www.facebook.com/" target="_blank"><img
                         src="img/facebook-icon.png"></a></li>
-            <li class="social-btn"><a href="https://twitter.com/home?lang=en" target="_blank"><img
+            <li class="social-btn twitter"><a href="https://twitter.com/home?lang=en" target="_blank"><img
                         src="img/twitter-icon.png"></a></li>
-            <li class="social-btn"><a href="https://www.behance.net/" target="_blank"><img
+            <li class="social-btn behance"><a href="https://www.behance.net/" target="_blank"><img
                         src="img/behance-icon.png"></a></li>
-            <li class="social-btn"><a href="https://dribbble.com/" target="_blank"><img src="img/dribbble-icon.png"></a>
+            <li class="social-btn dribbble"><a href="https://dribbble.com/" target="_blank"><img
+                        src="img/dribbble-icon.png"></a>
             </li>
         </ul>
     </footer>
     <script>
         function toggleMenu() {
+            document.body.classList.toggle('menu-open');
+        }
+
+
+        function toggleModal() {
+            var elModal = document.querySelector('.modal');
+            elModal.style.display = 'flex'
+            document.body.classList.toggle('menu-open');
+        }
+        function closeModal() {
+            var elModal = document.querySelector('.modal');
+            elModal.style.display = 'none'
             document.body.classList.toggle('menu-open');
         }
     </script>
